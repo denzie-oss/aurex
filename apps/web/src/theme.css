@@ -1,0 +1,80 @@
+/* AUREX upgrade — dark glass fintech theme (layered over style.css) */
+:root{
+  --bg:#060d0b; --bg2:#0a1612; --glass:rgba(20,42,36,.55); --line:rgba(120,255,210,.14);
+  --ink:#eaf6f1; --dim:#8fa9a0; --acc:#38e8b0; --acc2:#56d9ce; --warn:#e7c98a;
+}
+body{
+  background:
+    radial-gradient(60% 40% at 85% -5%,rgba(56,232,176,.16),transparent 70%),
+    radial-gradient(50% 40% at 0% 100%,rgba(30,110,140,.18),transparent 70%),
+    var(--bg);
+  color:var(--ink);
+}
+.glass{
+  background:linear-gradient(160deg,rgba(30,62,52,.62),rgba(10,24,20,.7));
+  border:1px solid var(--line);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 18px 50px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+/* Surfaces everywhere pick up the glass look */
+.sidebar{background:rgba(7,16,13,.82);border-right:1px solid var(--line);backdrop-filter:blur(12px)}
+.stat,.panel,.action-card,.auth-card,.balance-card,.receipt-modal{
+  background:linear-gradient(160deg,rgba(24,50,42,.55),rgba(9,20,17,.75));
+  border-color:var(--line);
+}
+.nav-item.active,.nav-item:hover{background:rgba(56,232,176,.12);color:var(--acc)}
+.primary{background:linear-gradient(100deg,#2fe3a8,#7df0c4);color:#04140e;box-shadow:0 8px 26px rgba(56,232,176,.28);border-radius:14px}
+.trade-form input,.trade-form select,.stack input{background:rgba(5,12,10,.7);border-color:rgba(120,255,210,.18);border-radius:12px}
+.trade-form input:focus,.trade-form select:focus,.stack input:focus{border-color:var(--acc);box-shadow:0 0 0 3px rgba(56,232,176,.15)}
+.brand-mark{border-color:var(--acc);color:var(--acc);box-shadow:0 0 22px rgba(56,232,176,.25)}
+.refresh-button{background:rgba(56,232,176,.1);border-color:var(--line);color:var(--acc)}
+.icon-button,.mobile-menu{background:rgba(255,255,255,.05);border-color:var(--line);border-radius:14px}
+
+/* Overview hero: wallet card + quick actions */
+.wx-hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:18px;align-items:stretch}
+.wx-card{border-radius:24px;padding:26px;min-height:210px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.wx-card::after{content:"";position:absolute;right:-60px;top:-70px;width:240px;height:240px;border-radius:50%;
+  background:radial-gradient(circle,rgba(56,232,176,.35),transparent 65%);pointer-events:none}
+.wx-card-top,.wx-card-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--dim);position:relative;z-index:1}
+.wx-balance{font:600 clamp(32px,5vw,46px)/1.1 'Space Grotesk',sans-serif;letter-spacing:-.5px;position:relative;z-index:1}
+.wx-chip{padding:4px 10px;border-radius:999px;background:rgba(56,232,176,.14);color:var(--acc);font-size:11px;text-transform:capitalize}
+.wx-mark{width:32px;height:32px;border:1px solid var(--acc);border-radius:10px;display:grid;place-items:center;color:var(--acc);font:700 16px 'Space Grotesk';position:relative}
+.wx-mark i{font-style:normal;font-size:7px;position:absolute;right:3px;top:2px}
+.wx-quick{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.wx-quick button{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:14px;padding:16px;
+  border-radius:20px;border:1px solid var(--line);color:var(--ink);font-weight:600;font-size:14px;
+  background:linear-gradient(160deg,rgba(30,62,52,.5),rgba(10,24,20,.7));transition:transform .15s,border-color .15s}
+.wx-quick button:hover{border-color:var(--acc)}
+.wx-quick button:active{transform:scale(.97)}
+.wx-quick span{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;background:rgba(56,232,176,.14);color:var(--acc)}
+
+/* Recent activity list */
+.wx-link{background:none;border:0;color:var(--acc);font-size:13px}
+.wx-list{border-radius:22px;padding:6px}
+.wx-row{display:flex;align-items:center;gap:13px;width:100%;padding:12px;border:0;background:none;color:var(--ink);text-align:left;border-radius:16px}
+.wx-row:hover{background:rgba(255,255,255,.04)}
+.wx-row+.wx-row{border-top:1px solid rgba(120,255,210,.08)}
+.wx-ico{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(56,232,176,.12);color:var(--acc);flex:none}
+.wx-meta{display:grid;gap:3px;min-width:0}
+.wx-meta b{font-size:14px;text-transform:capitalize;font-weight:600}
+.wx-meta small{color:var(--dim);font-size:11px}
+.wx-amt{margin-left:auto;font:600 14px 'Space Grotesk',sans-serif;color:var(--acc)}
+.wx-empty{color:var(--dim);font-size:13px;padding:22px;margin:0;text-align:center}
+
+/* Mobile bottom tab bar */
+.wx-tabs{display:none}
+@media(max-width:800px){
+  .wx-hero{grid-template-columns:1fr}
+  .wx-quick{grid-template-columns:repeat(4,1fr);gap:8px}
+  .wx-quick button{align-items:center;padding:12px 4px;font-size:12px;gap:8px}
+  .wx-quick span{width:36px;height:36px}
+  .main{padding-bottom:96px}
+  .wx-tabs{display:flex;position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:20;
+    justify-content:space-around;padding:8px;border-radius:24px;border:1px solid var(--line);
+    background:rgba(8,20,16,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 14px 40px rgba(0,0,0,.5)}
+  .wx-tabs button{display:grid;justify-items:center;gap:4px;border:0;background:none;color:var(--dim);font-size:10px;padding:8px 14px;border-radius:16px}
+  .wx-tabs button.on{color:var(--acc);background:rgba(56,232,176,.12)}
+}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

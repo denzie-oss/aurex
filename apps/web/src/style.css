@@ -1,0 +1,593 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{font-family:'DM Sans',sans-serif;color:#eaf0fa;background:#080d18;font-synthesis:none;text-rendering:optimizeLegibility}*{box-sizing:border-box}body{margin:0;min-width:320px;background:radial-gradient(ellipse at 75% 0%,#13223b 0,transparent 42%),#080d18}button,input,select{font:inherit}button{cursor:pointer}.shell{min-height:100vh;display:flex}.sidebar{width:248px;border-right:1px solid #1c2940;background:#0a1120;padding:27px 17px;display:flex;flex-direction:column;position:fixed;inset:0 auto 0 0}.brand{display:flex;align-items:center;gap:11px;margin:0 0 48px 7px}.brand-mark{width:39px;height:39px;border:1px solid #4ce1d2;border-radius:12px;display:grid;place-items:center;color:#6df0df;font:700 23px 'Space Grotesk';position:relative;box-shadow:0 0 22px #38dcca22}.brand-mark span{font-size:9px;position:absolute;right:5px;top:4px}.brand b{display:block;font:700 19px 'Space Grotesk';letter-spacing:2px}.brand small{display:block;color:#8292aa;font-size:8px;letter-spacing:1.5px;margin-top:2px}.side-label,.eyebrow{font-size:10px;letter-spacing:1.7px;color:#7c8da7;font-weight:700}.side-label{padding:0 12px 12px}.nav-item{display:flex;align-items:center;gap:12px;padding:12px;border:0;background:transparent;color:#9eacc1;text-align:left;border-radius:9px;margin-bottom:5px;font-size:13px}.nav-item.active,.nav-item:hover{background:#17263a;color:#71e6d8}.lower{margin-top:34px}.sidebar-bottom{margin-top:auto}.user-chip{border-top:1px solid #1c2940;padding:17px 3px 0;display:flex;align-items:center;gap:10px;font-size:11px}.user-chip small{display:block;color:#8292aa;margin-top:4px}.user-chip button{margin-left:auto;background:none;border:0;color:#91a0b6}.avatar{width:32px;height:32px;border-radius:50%;background:#183d49;color:#70e9d8;display:grid;place-items:center;font-weight:700}.main{margin-left:248px;width:calc(100% - 248px);max-width:1500px;padding:30px 5vw 24px}.topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}.topbar h2{font:600 21px 'Space Grotesk';margin:5px 0 0}.icon-button,.mobile-menu{background:#111d2d;color:#b9c7d9;border:1px solid #26364c;border-radius:10px;padding:10px}.mobile-menu{display:none}.welcome{min-height:285px;border:1px solid #234252;border-radius:18px;background:linear-gradient(110deg,#102737,#101c30 64%,#14243a);padding:35px 40px;display:flex;align-items:center;justify-content:space-between;overflow:hidden;position:relative}.welcome h1{font:600 clamp(32px,4vw,49px)/1.1 'Space Grotesk';margin:14px 0}.welcome h1 em{font-style:normal;color:#6ce5d6}.welcome p,.muted{color:#9baec2;font-size:13px;line-height:1.7}.primary{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:9px;background:linear-gradient(100deg,#56d9ce,#80e9b5);color:#07151b;font-weight:700;padding:12px 17px;margin-top:14px}.primary:disabled{opacity:.6}.hero-orb{width:235px;height:235px;position:relative;display:grid;place-items:center;margin-right:35px}.orb-core{width:94px;height:94px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,#a6fff0,#2a8c94 55%,#132d48);box-shadow:0 0 65px #56e8d466;color:#061923;font:700 42px 'Space Grotesk';position:relative}.orb-core span{font-size:13px;position:absolute;right:20px;top:17px}.orbit{position:absolute;border:1px solid #70e6d455;border-radius:50%;transform:rotate(-28deg)}.orbit-one{width:205px;height:92px}.orbit-two{width:235px;height:150px;transform:rotate(52deg)}.section-head{display:flex;justify-content:space-between;align-items:end;margin:30px 0 15px}.section-head h3,.panel h3{font:600 21px 'Space Grotesk';margin:6px 0 0}.status{font-size:11px;color:#8ce1bb}.status i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#63dba2;margin-right:7px}.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.stat,.panel{border:1px solid #202e43;background:#0d1727;border-radius:13px;padding:19px}.stat-top{display:flex;justify-content:space-between;color:#98a9be;font-size:12px}.stat-top svg{color:#69d9ce}.stat strong{display:block;font:600 27px 'Space Grotesk';margin:15px 0 5px}.stat small{color:#72849c;font-size:11px}.action-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.action-card{display:flex;align-items:center;gap:15px;text-align:left;background:#0d1727;border:1px solid #202e43;border-radius:13px;padding:18px;color:#eaf0fa}.action-card:hover{border-color:#4bcbbd}.action-icon{width:43px;height:43px;border-radius:12px;background:#16333a;color:#6ce5d6;display:grid;place-items:center}.action-card b{font:600 14px 'Space Grotesk'}.action-card p{color:#8fa0b6;font-size:11px;margin:5px 0 0}.action-arrow{margin-left:auto;color:#6ce5d6}.panel{max-width:760px;padding:27px}.trade-form,.stack{display:grid;gap:17px;margin-top:24px}.trade-form label,.stack label{display:grid;gap:8px;color:#aebdd0;font-size:12px}.trade-form input,.trade-form select,.stack input{width:100%;padding:12px 13px;border:1px solid #2a3b52;background:#091321;color:#edf3fc;border-radius:8px;outline:none}.trade-form input:focus,.trade-form select:focus,.stack input:focus{border-color:#5bd9cb}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.warning{display:flex;gap:10px;align-items:center;background:#332a19;color:#e7c98a;border:1px solid #66502b;padding:12px;border-radius:8px;font-size:11px;line-height:1.5}.empty{text-align:center;padding:55px 15px;color:#8293a9}.empty b{display:block;color:#dce6f4;margin-top:12px}.empty p{font-size:12px}.table-wrap{overflow:auto;margin-top:20px}table{border-collapse:collapse;width:100%;font-size:12px}th,td{text-align:left;padding:13px;border-bottom:1px solid #223148;white-space:nowrap}th{color:#7e91aa;font-size:10px;text-transform:uppercase;letter-spacing:1px}.pill{background:#273322;color:#d5dba1;padding:5px 8px;border-radius:20px;font-size:10px}.notice{background:#173b3a;border:1px solid #2d7067;color:#a8f2df;padding:11px 13px;border-radius:8px;font-size:12px}.banner{display:flex;justify-content:space-between;margin-bottom:15px}.banner button{background:none;border:0;color:inherit;font-size:18px}footer{color:#61728a;font-size:10px;margin-top:55px;text-align:center}.auth-wrap{min-height:100vh;display:grid;place-items:center;padding:20px}.auth-card{width:min(100%,420px);border:1px solid #23334a;background:#0d1727;padding:35px;border-radius:17px}.auth-card .brand{margin:0 0 35px}.auth-card h1{font:600 29px 'Space Grotesk';margin:10px 0}.auth-card .primary{width:100%}.switch{margin-top:20px}.link{background:none;border:0;color:#70e5d5}.fine{font-size:10px;color:#65758b;margin-top:28px}.auth-card .notice{margin-top:15px}
+@media(max-width:800px){.sidebar{display:none}.main{margin:0;width:100%;padding:22px 17px}.mobile-menu{display:block;margin-right:12px}.topbar{justify-content:flex-start}.topbar .icon-button{margin-left:auto}.welcome{padding:26px 22px;min-height:250px}.hero-orb{width:120px;height:120px;margin:0 -35px 0 0;opacity:.65}.orb-core{width:65px;height:65px;font-size:29px}.orbit-one{width:130px;height:55px}.orbit-two{width:140px;height:90px}.stat-grid{grid-template-columns:1fr}.action-grid{grid-template-columns:1fr}.section-head{align-items:start;gap:12px}.status{margin-top:8px}.two{grid-template-columns:1fr}.panel{padding:20px}.welcome h1{font-size:34px}.welcome p{max-width:220px}}
+
+/* AUREX WALLET */
+
+.wallet-page {
+  display: grid;
+  gap: 18px;
+}
+
+.wallet-heading,
+.history-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.wallet-heading h3,
+.history-heading h3 {
+  font: 600 21px 'Space Grotesk';
+  margin: 7px 0;
+}
+
+.refresh-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #142638;
+  color: #76e7d7;
+  border: 1px solid #2b5260;
+  padding: 10px 13px;
+  border-radius: 9px;
+  font-size: 12px;
+}
+
+.refresh-button:disabled {
+  opacity: .5;
+}
+
+.balance-card {
+  border: 1px solid #28605e;
+  border-radius: 16px;
+  padding: 25px;
+  background:
+    radial-gradient(circle at 85% 10%, #286b6944, transparent 38%),
+    linear-gradient(115deg, #102e38, #102033 75%);
+  box-shadow: 0 12px 35px #00000020;
+}
+
+.balance-top,
+.balance-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.balance-top {
+  color: #9ab8c4;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+}
+
+.balance-top svg {
+  color: #70e7d8;
+}
+
+.balance-card > strong {
+  display: block;
+  font: 600 clamp(30px, 5vw, 43px) 'Space Grotesk';
+  margin: 23px 0;
+  overflow-wrap: anywhere;
+}
+
+.balance-bottom {
+  color: #9bb0bd;
+  font-size: 11px;
+  border-top: 1px solid #ffffff18;
+  padding-top: 15px;
+}
+
+.wallet-status {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.wallet-status.active {
+  color: #79e5b2;
+}
+
+.wallet-status.frozen,
+.wallet-status.closed {
+  color: #f2ad8b;
+}
+
+.wallet-grid {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 15px;
+  align-items: start;
+}
+
+.wallet-grid .panel {
+  max-width: none;
+  height: 100%;
+}
+
+.amount-preview {
+  background: #132c36;
+  color: #83e5d6;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.wallet-info .info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 15px 0;
+  border-bottom: 1px solid #223148;
+}
+
+.info-row span {
+  color: #8294aa;
+  font-size: 11px;
+}
+
+.info-row b {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.wallet-security {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #142c30;
+  border: 1px solid #27504d;
+  padding: 13px;
+  margin-top: 18px;
+  border-radius: 9px;
+  color: #70e2d3;
+}
+
+.wallet-security b {
+  font-size: 12px;
+}
+
+.wallet-security p {
+  color: #a1b5c1;
+  font-size: 11px;
+  line-height: 1.6;
+  margin: 6px 0 0;
+}
+
+.wallet-history {
+  max-width: none;
+}
+
+.history-heading {
+  margin-bottom: 12px;
+}
+
+.history-heading > svg {
+  color: #6fe1d3;
+}
+
+.status-pending {
+  background: #3b321e;
+  color: #f0ce82;
+}
+
+.status-posted {
+  background: #173b32;
+  color: #82e5b4;
+}
+
+.status-rejected,
+.status-reversed {
+  background: #42272b;
+  color: #f1a3a8;
+}
+
+@media(max-width: 900px) {
+  .wallet-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 600px) {
+  .wallet-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .balance-card {
+    padding: 20px;
+  }
+
+  .balance-card > strong {
+    font-size: 32px;
+  }
+
+  .wallet-history {
+    padding: 16px;
+  }
+
+  .history-heading h3 {
+    font-size: 17px;
+  }
+}
+
+/* AUREX WALLET INTELLIGENCE */
+
+.statement-panel {
+  max-width: none;
+}
+
+.statement-filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto auto;
+  gap: 12px;
+  align-items: end;
+  margin: 22px 0;
+}
+
+.statement-filters label {
+  display: grid;
+  gap: 8px;
+  color: #aebdd0;
+  font-size: 12px;
+}
+
+.statement-filters input {
+  min-width: 0;
+  width: 100%;
+  padding: 11px;
+  color: #edf3fc;
+  background: #091321;
+  border: 1px solid #2a3b52;
+  border-radius: 8px;
+  color-scheme: dark;
+}
+
+.statement-action {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.statement-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.statement-summary > div {
+  display: grid;
+  gap: 9px;
+  padding: 16px;
+  background: #101f30;
+  border: 1px solid #26384d;
+  border-radius: 10px;
+}
+
+.statement-summary span,
+.statement-meta,
+.statement-details span {
+  color: #8fa2b8;
+  font-size: 11px;
+}
+
+.statement-summary b {
+  font: 600 17px 'Space Grotesk';
+  overflow-wrap: anywhere;
+}
+
+.statement-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.statement-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+  color: #9aacc0;
+  font-size: 12px;
+}
+
+.statement-loading {
+  padding: 25px 5px;
+  color: #8fa2b8;
+  font-size: 12px;
+}
+
+.statement-error {
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #78404a;
+  border-radius: 8px;
+  background: #35212a;
+  color: #ffb8c0;
+  font-size: 12px;
+}
+
+.statement-empty {
+  padding: 30px 10px;
+}
+
+.receipt-button {
+  padding: 7px 10px;
+  color: #79e8d8;
+  background: #142c36;
+  border: 1px solid #2d5960;
+  border-radius: 7px;
+  font-size: 11px;
+}
+
+.receipt-button:disabled {
+  opacity: .5;
+}
+
+.receipt-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  overflow-y: auto;
+  background: #020711d9;
+  backdrop-filter: blur(7px);
+}
+
+.receipt-modal {
+  width: min(100%, 510px);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 25px;
+  border: 1px solid #315365;
+  border-radius: 16px;
+  background: #0d1727;
+  box-shadow: 0 25px 80px #0009;
+}
+
+.receipt-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.receipt-heading h3 {
+  margin: 8px 0;
+  font: 600 21px 'Space Grotesk';
+}
+
+.receipt-close {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #31435a;
+  border-radius: 8px;
+  background: #172538;
+  color: #dce8f5;
+  font-size: 23px;
+}
+
+.receipt-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin: 22px 0;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #27384b;
+}
+
+.receipt-brand .brand-mark {
+  margin: 0;
+}
+
+.receipt-brand b,
+.receipt-brand small {
+  display: block;
+}
+
+.receipt-brand b {
+  font: 700 17px 'Space Grotesk';
+  letter-spacing: 2px;
+}
+
+.receipt-brand small {
+  margin-top: 4px;
+  color: #8296ac;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.receipt-amount {
+  margin: 24px 0 12px;
+  color: #7ce8d9;
+  font: 600 clamp(28px, 7vw, 38px) 'Space Grotesk';
+  overflow-wrap: anywhere;
+}
+
+.receipt-status p {
+  color: #9aadc1;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.receipt-details {
+  display: grid;
+  gap: 0;
+  margin-top: 20px;
+  border-top: 1px solid #27384b;
+}
+
+.receipt-details > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 13px 0;
+  border-bottom: 1px solid #27384b;
+}
+
+.receipt-details span {
+  flex-shrink: 0;
+  color: #8498af;
+  font-size: 11px;
+}
+
+.receipt-details b {
+  max-width: 65%;
+  text-align: right;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+}
+
+.receipt-disclaimer {
+  color: #899cb1;
+  font-size: 10px;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+.receipt-done {
+  width: 100%;
+}
+
+@media(max-width: 850px) {
+  .statement-filters {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .statement-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 500px) {
+  .statement-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .statement-meta {
+    flex-direction: column;
+  }
+
+  .receipt-modal {
+    padding: 19px;
+  }
+
+  .receipt-details > div {
+    gap: 10px;
+  }
+}
+
+
+
+/* AUREX CUSTOMER APPRECIATION */
+.appreciation-page {
+  display: grid;
+  gap: 20px;
+}
+.appreciation-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(25px, 5vw, 48px);
+  border: 1px solid #28575b;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 88% 15%, #2c827044, transparent 34%),
+    linear-gradient(125deg, #102d39, #101c30 72%);
+}
+.appreciation-symbol {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 24px;
+  border: 1px solid #397c78;
+  border-radius: 16px;
+  color: #83ead9;
+  background: #1a4848;
+}
+.appreciation-hero h1 {
+  max-width: 690px;
+  margin: 13px 0;
+  font: 600 clamp(30px, 5vw, 48px)/1.12 'Space Grotesk';
+  letter-spacing: -1.5px;
+}
+.appreciation-hero h1 em {
+  color: #79e5d5;
+  font-style: normal;
+}
+.appreciation-hero > p,
+.appreciation-note p {
+  max-width: 650px;
+  color: #a7bac9;
+  font-size: 13px;
+  line-height: 1.85;
+}
+.appreciation-signoff {
+  margin-top: 25px;
+  color: #83e6d8;
+  font: 600 12px 'Space Grotesk';
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+.appreciation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.appreciation-card {
+  padding: 22px;
+  border: 1px solid #263b50;
+  border-radius: 13px;
+  background: #101d2d;
+}
+.appreciation-card > svg {
+  color: #7ce4d6;
+}
+.appreciation-card h3,
+.appreciation-note h3 {
+  margin: 15px 0 8px;
+  font: 600 17px 'Space Grotesk';
+}
+.appreciation-card p {
+  margin: 0;
+  color: #98aabd;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.appreciation-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 24px;
+  border: 1px solid #2b4655;
+  border-radius: 14px;
+  background: #111f30;
+}
+.appreciation-note h3 {
+  margin-top: 9px;
+}
+.appreciation-mark {
+  flex: 0 0 auto;
+  color: #82e6d7;
+  font: 700 54px 'Space Grotesk';
+}
+.appreciation-mark span {
+  font-size: 17px;
+  vertical-align: top;
+}
+@media(max-width: 850px) {
+  .appreciation-grid { grid-template-columns: 1fr; }
+}
+@media(max-width: 600px) {
+  .appreciation-note { align-items: flex-start; }
+  .appreciation-mark { font-size: 38px; }
+}
