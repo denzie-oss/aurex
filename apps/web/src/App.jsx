@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Landing from './landing/Landing';
+import { CardArt, ServiceGrid } from './components/CardArt';
 import {
   ArrowDownUp, ArrowUpRight, Bell, ChevronRight, Heart,
   CircleDollarSign, CreditCard, LayoutDashboard,
@@ -584,6 +585,29 @@ export default function App() {
             </section>
 
             <div className="section-head">
+              <div><h3>Popular cards</h3></div>
+            </div>
+            <div className="card-row">
+              {brands.map(b => (
+                <button
+                  key={b.slug}
+                  className="card-pick"
+                  onClick={() => { setForm({ ...form, brandSlug: b.slug, direction: 'sell' }); setPage('trade'); }}
+                >
+                  <CardArt slug={b.slug} name={b.name} />
+                </button>
+              ))}
+            </div>
+
+            <div className="section-head">
+              <div><h3>Services</h3></div>
+            </div>
+            <ServiceGrid onOpen={k => {
+              if (k === 'trade') setPage('trade');
+              else { setPage('wallet'); loadWallet(); loadStatement(1); }
+            }} />
+
+            <div className="section-head">
               <div><h3>Recent activity</h3></div>
               <button className="wx-link" onClick={() => setPage('transactions')}>See all</button>
             </div>
@@ -729,6 +753,21 @@ export default function App() {
             </p>
 
             <form onSubmit={submitTrade} className="trade-form">
+              <div className="card-row" role="radiogroup" aria-label="Gift card brand">
+                {brands.map(b => (
+                  <button
+                    type="button"
+                    key={b.slug}
+                    role="radio"
+                    aria-checked={form.brandSlug === b.slug}
+                    className={`card-pick ${form.brandSlug === b.slug ? 'on' : ''}`}
+                    onClick={() => setForm({ ...form, brandSlug: b.slug })}
+                  >
+                    <CardArt slug={b.slug} name={b.name} />
+                  </button>
+                ))}
+              </div>
+
               <label>
                 Trade direction
                 <select

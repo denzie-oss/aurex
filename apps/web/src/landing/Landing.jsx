@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import './landing.css';
+import { CardArt, PALETTE, ServiceGrid } from '../components/CardArt';
 
 /* Sample rates for preview only. Live rates are not connected yet
    (the API's /catalog/rates intentionally returns an empty list). */
@@ -8,7 +9,7 @@ const SAMPLE = [
   { slug: 'amazon', name: 'Amazon', perUsd: 1000 },
   { slug: 'steam', name: 'Steam', perUsd: 980 },
   { slug: 'google-play', name: 'Google Play', perUsd: 960 },
-  { slug: 'razer', name: 'Razer Gold', perUsd: 900 }
+  { slug: 'razer-gold', name: 'Razer Gold', perUsd: 900 }
 ];
 const PRESETS = [25, 50, 100, 200, 500];
 const STEPS = ['Submitted', 'Reviewing', 'Approved', 'Paid'];
@@ -64,21 +65,24 @@ function RateDial({ onStart }) {
 
   return (
     <section className="lp-dial" aria-label="Payout estimator">
-      <div className="lp-chips" role="tablist">
+      <div className="card-row" role="tablist" aria-label="Choose a gift card">
         {SAMPLE.map((s, i) => (
           <button
             key={s.slug}
             role="tab"
             aria-selected={i === brand}
-            className={i === brand ? 'on' : ''}
+            className={`card-pick ${i === brand ? 'on' : ''}`}
             onClick={() => { setBrand(i); buzz(); }}
-          >{s.name}</button>
+          >
+            <CardArt slug={s.slug} name={s.name} />
+            <small>Sample ₦{s.perUsd.toLocaleString()} / $1</small>
+          </button>
         ))}
       </div>
 
       <div className="lp-stage" ref={wrap} onPointerMove={tilt} onPointerLeave={untilt}>
         <div className={`lp-card ${flipped ? 'flip' : ''}`} onClick={() => { setFlipped(f => !f); buzz(); }}>
-          <div className="lp-face lp-front">
+          <div className="lp-face lp-front" style={{ background: `linear-gradient(150deg, ${PALETTE[b.slug].a}, ${PALETTE[b.slug].b})`, borderColor: PALETTE[b.slug].c }}>
             <span className="lp-sheen" />
             <div className="lp-card-top">
               <b>{b.name}</b><i>GIFT CARD</i>
@@ -199,6 +203,12 @@ export default function Landing({ onAuth }) {
         <section className="lp-sec">
           <h2>Every trade, in plain sight</h2>
           <TradeTicket />
+        </section>
+
+        <section className="lp-sec">
+          <h2>More than gift cards</h2>
+          <ServiceGrid />
+          <p className="lp-note">Gift cards, wallet and statements are live. The rest are on the way.</p>
         </section>
 
         <section className="lp-sec">

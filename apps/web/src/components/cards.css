@@ -1,0 +1,20 @@
+.ca{display:block;width:100%;height:auto;border-radius:20px;filter:drop-shadow(0 14px 24px rgba(0,0,0,.45))}
+
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:10px}
+.svc{position:relative;display:grid;justify-items:center;gap:8px;padding:16px 6px 14px;border-radius:20px;
+  border:1px solid rgba(244,236,220,.12);color:#f4ecdc;font:600 12px 'Manrope',sans-serif;cursor:pointer;
+  background:linear-gradient(160deg,rgba(244,236,220,.07),rgba(244,236,220,.02));transition:transform .2s cubic-bezier(.34,1.56,.64,1),border-color .2s}
+.svc:disabled{cursor:default;opacity:.62}
+.svc.live:hover{border-color:#e8b960} .svc.live:active{transform:scale(.95)}
+.svc-ico{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;color:#e8b960;background:rgba(232,185,96,.13)}
+.svc b{font-weight:600}
+.svc em{font-style:normal;font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:2px 7px;border-radius:999px}
+.svc.live em{color:#1a1205;background:#e8b960} .svc.soon em{color:#a39b8b;border:1px solid rgba(244,236,220,.18)}
+
+.card-row{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 10px;scrollbar-width:none}
+.card-row::-webkit-scrollbar{display:none}
+.card-pick{flex:none;width:168px;padding:0;border:2px solid transparent;border-radius:22px;background:none;
+  scroll-snap-align:start;cursor:pointer;transition:transform .2s cubic-bezier(.34,1.56,.64,1),border-color .2s;text-align:left;color:inherit}
+.card-pick:active{transform:scale(.96)}
+.card-pick.on{border-color:#e8b960;transform:translateY(-3px)}
+.card-pick small{display:block;padding:6px 4px 0;font:600 11px 'Manrope',sans-serif;color:#a39b8b}
