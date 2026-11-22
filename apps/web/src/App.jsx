@@ -52,6 +52,8 @@ export default function App() {
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
   const [authMode, setAuthMode] = useState('login');
+  const [showAuth, setShowAuth] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [busy, setBusy] = useState(false);
   const [walletLoading, setWalletLoading] = useState(false);
@@ -337,6 +339,8 @@ export default function App() {
 
   function logout() {
     localStorage.removeItem('aurex_token');
+    setShowAuth(false);
+    setMenuOpen(false);
     setToken('');
     setTrades([]);
     setWallet(null);
@@ -446,7 +450,8 @@ export default function App() {
 
   return (
     <div className="shell">
-      <aside className="sidebar">
+      <div className={`wx-backdrop ${menuOpen ? 'show' : ''}`} onClick={() => setMenuOpen(false)} />
+      <aside className={`sidebar ${menuOpen ? 'open' : ''}`} onClick={() => setMenuOpen(false)}>
         <Brand />
 
         <div className="side-label">WORKSPACE</div>
@@ -524,7 +529,7 @@ export default function App() {
 
       <main className="main">
         <header className="topbar">
-          <button className="mobile-menu">
+          <button className="mobile-menu" aria-label="Open menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(true)}>
             <Menu />
           </button>
 

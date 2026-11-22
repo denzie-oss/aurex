@@ -78,3 +78,15 @@ body{
 }
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* Mobile slide-in menu */
+.wx-backdrop{display:none}
+.mobile-menu{display:none}
+@media(max-width:800px){
+  .mobile-menu{display:grid;place-items:center;width:44px;height:44px;color:var(--ink);cursor:pointer}
+  .sidebar{display:flex!important;position:fixed;top:0;left:0;bottom:0;width:276px;z-index:60;overflow-y:auto;
+    transform:translateX(-105%);transition:transform .28s cubic-bezier(.34,1.2,.64,1);background:rgba(11,10,9,.97)}
+  .sidebar.open{transform:none;box-shadow:0 0 70px rgba(0,0,0,.8)}
+  .wx-backdrop{display:block;position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .25s}
+  .wx-backdrop.show{opacity:1;pointer-events:auto}
+}
