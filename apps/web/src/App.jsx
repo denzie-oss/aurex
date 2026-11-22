@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Landing from './landing/Landing';
 import {
   ArrowDownUp, ArrowUpRight, Bell, ChevronRight, Heart,
   CircleDollarSign, CreditCard, LayoutDashboard,
@@ -344,10 +345,15 @@ export default function App() {
     setMessage('');
   }
 
+  if (!token && !showAuth) {
+    return <Landing onAuth={mode => { setAuthMode(mode); setShowAuth(true); }} />;
+  }
+
   if (!token) {
     return (
       <main className="auth-wrap">
         <div className="auth-card">
+          <button type="button" className="wx-back" onClick={() => setShowAuth(false)}>← Back</button>
           <Brand />
           <span className="eyebrow">YOUR GIFT CARD EXCHANGE</span>
           <h1>
